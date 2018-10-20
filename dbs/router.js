@@ -35,5 +35,26 @@ router.post('/add', async (ctx, next) => {
     }
 })
 
+router.post('/get', async function(ctx){
+    const result = await Person.findOne({ name: ctx.query.name})
+    const results = await Person.find({ name: ctx.query.name})
+    ctx.body = {
+        result,
+        results
+    }
+})
+
+router.post('/update', async function(ctx){
+    const result = await Person.where({
+        name: ctx.query.name
+    }).update({
+        age: ctx.query.age
+    });
+
+    ctx.body = {
+        newAge: result.age
+    }
+})
+
 
 module.exports = router

@@ -5,9 +5,10 @@ const Person = require('./models/person')
 
 router.prefix('/signup')
 
-router.get('/', function (ctx, next) {
-    console.log(ctx)
-    ctx.body = 'this is a signup response!'
+router.get('/', async (ctx, next) => {
+    await ctx.render('signup', {
+        title: 'signup - koa2!'
+    })
 })
 
 router.post('/show', (ctx, next) => {
@@ -18,6 +19,7 @@ router.post('/show', (ctx, next) => {
     }
 })
 router.post('/add', async (ctx, next) => {
+    console.log(ctx.request.body)
     const person = new Person({
         name: ctx.request.body.name,
         age: ctx.request.body.age
