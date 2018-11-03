@@ -79,3 +79,7 @@ dist
 
 # IDE
 .idea
+
+server/dbs/config.js
+
+data
