@@ -30,7 +30,6 @@ module.exports = {
     'element-ui/lib/theme-chalk/reset.css',
     'element-ui/lib/theme-chalk/index.css',
     '~assets/css/main.css'
-    // '~assets/css/reset.css'
   ],
 
   /*
@@ -61,19 +60,11 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    //不能替代.babelrc
+    // babel: { presets: ['es2015', '@nuxtjs/babel-preset-app'] },
 
     cache: true,   //加快编译速度
     extend(config, { isServer, isDev, isClient }) {
-      // Run ESLint on save
-      /*if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }*/
-
       //https://github.com/nuxt/nuxt.js/issues/3804
       if (isServer) {
         for (const rules of config.module.rules.filter(({ test }) =>
@@ -86,6 +77,18 @@ module.exports = {
           }
         }
       }
+
+      // Run ESLint on save
+      /*if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }*/
+
+      
 
     }
     

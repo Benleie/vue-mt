@@ -13,10 +13,11 @@
 + 用户数据&状态
 
 ## 7.2
-+  error ReferenceError: document is not defined    关闭cache
++  error ReferenceError: document is not defined    关闭cache或者对其进行filter
 
 ## 8
-### 8.3
+### 8.9
++ 无法获取element icon，依然是cache的问题
 
 
 
@@ -27,4 +28,4 @@
 + 8.6 server/index
 + 8.7 pages/register:sendMsg
 + 8.8 pages/register:register  pages/login
-+ 8.9
++ 8.9 public/header/user.vue    exit.vue

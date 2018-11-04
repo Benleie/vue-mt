@@ -63,7 +63,7 @@ export default {
     }
   },
   async mounted(){
-    let self=this;
+    /*let self=this;
     let {status,data:{count,pois}}=await self.$axios.get('/search/resultsByKeywords',{
       params:{
         keyword:'景点',
@@ -83,11 +83,11 @@ export default {
       self.list[self.kind]=r.slice(0,9)
     }else{
       self.list[self.kind]=[]
-    }
+    }*/
   },
   methods: {
     over: async function (e) {
-      let dom = e.target
+      /*let dom = e.target
       let tag = dom.tagName.toLowerCase()
       let self = this
       if (tag === 'dd') {
@@ -113,7 +113,7 @@ export default {
         }else{
           self.list[self.kind]=[]
         }
-      }
+      }*/
     }
   },
 
