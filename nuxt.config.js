@@ -1,5 +1,5 @@
 const pkg = require('./package')
-
+console.log("nuxt.config.js")
 module.exports = {
   mode: 'universal',
 
@@ -57,14 +57,12 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+    
     //不能替代.babelrc
     // babel: { presets: ['es2015', '@nuxtjs/babel-preset-app'] },
 
-    cache: true,   //加快编译速度
-    extend(config, { isServer, isDev, isClient }) {
+    // cache: true,   //加快编译速度
+    /*extend(config, { isServer, isDev, isClient }) {
       //https://github.com/nuxt/nuxt.js/issues/3804
       if (isServer) {
         for (const rules of config.module.rules.filter(({ test }) =>
@@ -77,7 +75,8 @@ module.exports = {
           }
         }
       }
-
+    }*/
+    
       // Run ESLint on save
       /*if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -86,11 +85,6 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-      }*/
-
-      
-
-    }
-    
+      }*/    
   }
 }
